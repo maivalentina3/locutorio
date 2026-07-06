@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Locutorio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700&family=Share+Tech+Mono&family=Newsreader:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="scanlines"></div>
+
+<header class="signage">
+  <span class="signage-title">LOCUTORIO</span>
+  <span class="signage-sub">central de larga distancia · abierto 24 hs</span>
+</header>
+
+<main class="scene">
+  <div class="booth-row" id="boothRow" role="list" aria-label="Cabinas del locutorio">
+    <!-- las cabinas se generan por JS -->
+  </div>
+  <p class="instruction" id="instruction">elegí una cabina</p>
+</main>
+
+<footer class="credit">
+  <span>un memorial de espacios desaparecidos</span>
+</footer>
+
+<div class="call-overlay" id="callOverlay" hidden aria-live="polite">
+  <div class="crt-screen">
+    <div class="crt-topbar">
+      <span class="call-status" id="callStatus">marcando</span>
+      <span class="call-timer" id="callTimer">00:00</span>
+    </div>
+    <div class="crt-body">
+      <p class="memory-meta" id="memoryMeta"></p>
+      <p class="memory-text" id="memoryText" aria-live="off"></p>
+      <span class="cursor-blink" id="cursorBlink">▌</span>
+    </div>
+    <div class="crt-bottombar">
+      <button class="hang-up" id="hangUpBtn">colgar</button>
+    </div>
+  </div>
+</div>
+
+<div class="empty-toast" id="emptyToast" hidden></div>
+
+<div class="submit-overlay" id="submitOverlay" hidden aria-live="polite">
+  <div class="submit-panel">
+    <p class="submit-title">dejá tu recuerdo en esta cabina</p>
+    <div class="submit-field">
+      <label for="submitMeta">tu locutorio, ciudad y año</label>
+      <input type="text" id="submitMeta" maxlength="60" placeholder="ej: San Telmo, 1998">
+    </div>
+    <div class="submit-field">
+      <label for="submitText">tu recuerdo</label>
+      <textarea id="submitText" maxlength="700" rows="6" placeholder="contá tu recuerdo, tal como lo tenés en la memoria..."></textarea>
+    </div>
+    <div class="submit-actions">
+      <button class="ghost-btn" id="submitCancel">cancelar</button>
+      <button class="fill-btn" id="submitConfirm">dejar recuerdo</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
