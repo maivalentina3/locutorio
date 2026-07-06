@@ -18,6 +18,9 @@
 
 * { box-sizing: border-box; }
 
+/* el atributo hidden siempre gana, aunque la clase pida display:flex */
+[hidden] { display: none !important; }
+
 html, body {
   margin: 0;
   padding: 0;
